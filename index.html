@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enry Christanto — Senior Full Stack Developer</title>
+  <meta name="description" content="Enry Christanto — Senior Full Stack Developer based in Batam, Indonesia. C# / .NET on the backend, React and Next.js on the frontend. 9+ years building reliable, business-critical software.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Enry Christanto — Senior Full Stack Developer">
+  <meta property="og:description" content="9+ years building reliable, business-critical software. Full stack: C# / .NET, React, Next.js.">
+  <meta property="og:url" content="https://enrytan.dev">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fbfaf7;
+      --text: #1c1a17;
+      --body: #4a463f;
+      --muted: #8a8578;
+      --accent: #a2401b;
+      --border: #ddd9d0;
+      --serif: 'Newsreader', serif;
+      --sans: 'IBM Plex Sans', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: var(--sans);
+      color: var(--body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    a:hover { opacity: 0.7; }
+
+    .wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: var(--bg);
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+    }
+
+    /* Nav */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 72px 0 72px;
+    }
+    .nav__name {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .nav__links {
+      display: flex;
+      gap: 36px;
+      font-size: 14px;
+      color: var(--body);
+    }
+
+    /* Section shell */
+    .section {
+      padding: 100px 72px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 120px 72px 100px 72px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero__eyebrow { margin-bottom: 24px; }
+    .hero__title {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 76px;
+      line-height: 1.05;
+      color: var(--text);
+      margin: 0 0 32px 0;
+      max-width: 900px;
+    }
+    .hero__sub {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--body);
+      max-width: 620px;
+      margin: 0 0 40px 0;
+    }
+    .hero__cta { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn {
+      font-size: 14px;
+      font-weight: 500;
+      padding: 14px 28px;
+      display: inline-block;
+    }
+    .btn--primary { background: var(--text); color: var(--bg); }
+    .btn--ghost { border: 1px solid var(--text); color: var(--text); }
+
+    /* Two-column label + content grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 60px;
+    }
+
+    /* About */
+    .about__body { max-width: 760px; }
+    .about__body p {
+      font-size: 20px;
+      line-height: 1.65;
+      color: var(--text);
+      margin: 0 0 24px 0;
+      font-family: var(--serif);
+    }
+    .about__body p:last-child { margin-bottom: 0; }
+
+    /* How I work */
+    .section-head { margin-bottom: 48px; }
+    .principles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 60px;
+    }
+    .principles p {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--body);
+      margin: 0;
+      max-width: 420px;
+    }
+
+    /* Work / experience rows */
+    .row {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 60px;
+      border-top: 1px solid var(--border);
+    }
+    .work-row { padding: 40px 0; }
+    .exp-row { padding: 32px 0; }
+
+    .work-row__name, .exp-row__company {
+      font-family: var(--serif);
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .work-row__name { font-size: 26px; }
+    .exp-row__company { font-size: 22px; }
+    .work-row__role {
+      font-size: 13px;
+      color: var(--accent);
+      font-family: var(--mono);
+      margin-bottom: 16px;
+    }
+    .work-row__stack {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .work-row__desc {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--body);
+      margin: 0 0 20px 0;
+      max-width: 680px;
+    }
+    .work-row__bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--body);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .exp-row__dates {
+      font-size: 13px;
+      color: var(--muted);
+      font-family: var(--mono);
+    }
+    .exp-row__place {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .exp-row__note {
+      margin: 0;
+      color: var(--body);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .edu p {
+      margin: 0 0 8px 0;
+      color: var(--body);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Skills */
+    .skill-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 60px;
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+    }
+    .skill-row__cat {
+      font-size: 15px;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .skill-row__items {
+      font-size: 15px;
+      color: var(--body);
+      line-height: 1.8;
+    }
+
+    /* Contact */
+    .contact { padding: 100px 72px 120px 72px; }
+    .contact__head { margin-bottom: 32px; }
+    .contact__title {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 48px;
+      color: var(--text);
+      margin: 0 0 32px 0;
+      max-width: 700px;
+    }
+    .contact__body {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--body);
+      max-width: 640px;
+      margin: 0 0 32px 0;
+    }
+    .contact__links {
+      display: flex;
+      gap: 40px;
+      font-size: 16px;
+      flex-wrap: wrap;
+    }
+    .contact__links a {
+      color: var(--text);
+      border-bottom: 1px solid var(--text);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .nav, .hero, .section, .contact { padding-left: 40px; padding-right: 40px; }
+      .hero { padding-top: 80px; padding-bottom: 72px; }
+      .section { padding-top: 72px; padding-bottom: 72px; }
+      .contact { padding-top: 72px; padding-bottom: 88px; }
+      .hero__title { font-size: 56px; }
+      .grid-2, .principles, .row, .skill-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .row { gap: 20px; }
+    }
+
+    @media (max-width: 560px) {
+      .nav, .hero, .section, .contact { padding-left: 24px; padding-right: 24px; }
+      .nav { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .hero__title { font-size: 40px; }
+      .contact__title { font-size: 34px; }
+      .hero__cta .btn { flex: 1; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Nav -->
+    <nav class="nav">
+      <div class="nav__name">Enry Christanto</div>
+      <div class="nav__links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="eyebrow hero__eyebrow">SENIOR FULL STACK DEVELOPER, BATAM INDONESIA (UTC+7)</div>
+      <h1 class="hero__title">Building reliable, business critical software for 9+ years.</h1>
+      <p class="hero__sub">I work across the stack, C# and .NET on the backend, React and Next.js on the frontend, on SaaS and AdTech platforms with large datasets, complex workflows, and teams spread across time zones.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#contact">Get in touch</a>
+        <a class="btn btn--ghost" href="resume.pdf">Download résumé</a>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="section grid-2">
+      <div class="eyebrow">01 / ABOUT</div>
+      <div class="about__body">
+        <p>I'm a full stack developer based in Batam, Indonesia. For most of the last decade I've worked remotely for international clients, usually as part of teams spread across the US and India, so working across time zones and coordinating handoffs is just normal to me.</p>
+        <p>My background is backend first. I'm most at home in C#, ASP.NET Core, and SQL heavy systems, and that's still where I think most naturally. Over the last couple of years my work has moved toward the frontend with React, Next.js, and TypeScript, and more recently into leading a full product rebuild.</p>
+        <p>I'm a generalist. I like owning a system end to end rather than staying in one lane, and I've grown comfortable being the person who picks up the unfamiliar part and makes it work. I've also mentored other developers and helped set code standards along the way. One thing I care about: I try to describe my work accurately rather than dress it up, so what you read here is what I actually did.</p>
+      </div>
+    </section>
+
+    <!-- How I Work -->
+    <section class="section">
+      <div class="eyebrow section-head">02 / HOW I WORK</div>
+      <div class="principles">
+        <p>I own outcomes, not just tickets. If I built something, I stay responsible for how it holds up in production, not just whether it shipped.</p>
+        <p>I move fast in unfamiliar territory. Dropping into a codebase or a problem I haven't seen before and getting my bearings quickly is one of my stronger traits.</p>
+        <p>I try to reduce friction instead of adding to it. When something is fragile, I would rather fix the root cause than stack another workaround on top.</p>
+        <p>I look for the intent behind a request, what someone is actually trying to solve, so I build the right thing rather than just the literal ask.</p>
+        <p>I use AI tools heavily but deliberately. I've built a scope driven workflow for AI-assisted coding that keeps the output tight and reviewable instead of letting it sprawl.</p>
+      </div>
+    </section>
+
+    <!-- Selected Work -->
+    <section id="work" class="section">
+      <div class="eyebrow section-head">03 / SELECTED WORK</div>
+
+      <article class="row work-row">
+        <div>
+          <div class="work-row__name">JotGo</div>
+          <div class="work-row__role">Lead Engineer · Nov 2025 — Present</div>
+          <div class="work-row__stack">React, TypeScript, NestJS, Pixi.js, WebGL, Firestore, Redis, Bull, GCP, GraphQL, OAuth, SendGrid, MCP</div>
+        </div>
+        <div>
+          <p class="work-row__desc">JotGo is a SaaS platform and browser extension for bug reporting and product feedback, with screenshot capture, session replay, and team collaboration. I lead the rebuild as the main engineer and own the whole system: the database, the backend, the frontend, the browser extension, and the release process, along with the direction of a small three person team. I inherited a rough codebase, so a large part of the job has been restructuring it into something maintainable while still shipping new features.</p>
+          <ul class="work-row__bullets">
+            <li>Rebuilt the feedback canvas from ReactFlow to Pixi.js and WebGL. It handles hundreds of images smoothly in production, and I stress tested it past a thousand to confirm there was headroom.</li>
+            <li>Built the browser extension diagnostics in the background service worker: network request capture, console log capture, and session replay, so developers get real context to reproduce an issue.</li>
+            <li>Built the backend on NestJS and Firestore, with GraphQL APIs, OAuth authentication, and Redis and Bull queues for background jobs and email notifications through SendGrid, all running on GCP.</li>
+            <li>Integrated Linear end to end over GraphQL and extended an inherited Jira integration, connecting user feedback to the teams that act on it.</li>
+            <li>Built an MCP integration that connects the platform's feedback data with AI tooling, supporting both OAuth and PAT authentication.</li>
+            <li>Own the git branching strategy and the release process for the team.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="row work-row">
+        <div>
+          <div class="work-row__name">Cadent Ad Manager Platform</div>
+          <div class="work-row__role">Frontend Engineer · Jul 2024 — Nov 2025</div>
+          <div class="work-row__stack">React, Next.js, TypeScript, Tailwind, Zustand, React Hook Form, Zod, TanStack Query, Material React Table, Axios, DevCycle</div>
+        </div>
+        <div>
+          <p class="work-row__desc">Cadent's platform is an enterprise DSP for programmatic advertising, covering campaigns, line items, ad groups, targeting, optimization, and audiences. It's a large, data heavy application, the kind with big server paginated tables and deeply nested, interdependent forms. I worked mostly on the ad group side, and I spent most of my time in the optimization area, which is the most complex part of the product. This is also where my professional React experience started. When a trader sets up an ad group, they pick an optimizer, predictive models, KPIs, and a bidding strategy, and all of those choices constrain each other, so changing one value changes what is valid everywhere else. I was the primary developer on that flow. I wrote most of the optimization form, around 78 percent of a component that had grown past 1,600 lines, and I owned the shared state that ties its steps together. Much of the real work was untangling edit mode and replacing fragile patterns so invalid combinations cannot be saved.</p>
+          <ul class="work-row__bullets">
+            <li>Owned the ad group optimization flow (optimizer, predictive models, KPIs, bidding), built with React Hook Form and Zod for the interdependent validation and TanStack Query for the many dependent lookups.</li>
+            <li>Built the predictive KPI card and the HCP and health audience selection and save flow end to end, using Material React Table for the data grids.</li>
+            <li>Built the Next.js API routes, a BFF layer between the React app and the .NET backend, that handle auth, route to the right service, and reshape the data.</li>
+            <li>Managed shared state across the app with Zustand, and shipped changes behind DevCycle feature flags for gradual, controlled rollout.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="row work-row">
+        <div>
+          <div class="work-row__name">AdTheorent DSP Application</div>
+          <div class="work-row__role">Full Stack Developer · Feb 2021 — Jul 2024</div>
+          <div class="work-row__stack">ASP.NET, .NET Core, C#, Web API, SQL Server, ADO.NET, JavaScript, jQuery, Bootstrap, Stored Procedures</div>
+        </div>
+        <div>
+          <p class="work-row__desc">AdTheorent's DSP was an earlier AdTech campaign management platform, with campaign setup, line items, targeting, reporting, optimization, advertisers, and audiences. I worked full stack here for about three and a half years. On the backend I built Web API endpoints and controller actions in C# and .NET, and wrote a lot of SQL and stored procedures with ADO.NET for the data heavy workflows. On the frontend I worked in JavaScript and jQuery. I also spent real time refactoring fragile areas and tracking down production defects across the API, auth, and data. This is the backend heavy foundation of my experience.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="section">
+      <div class="eyebrow section-head">04 / EXPERIENCE TIMELINE</div>
+
+      <div class="row exp-row">
+        <div>
+          <div class="exp-row__company">Digital Avenues Ltd</div>
+          <div class="exp-row__dates">Feb 2021 — Present</div>
+        </div>
+        <div>
+          <div class="exp-row__place">Singapore (Remote), Senior Full Stack Developer</div>
+          <p class="exp-row__note">The company I work under as a remote contractor. Everything in Selected Work above was delivered through Digital Avenues, working in Scrum teams alongside product managers, QA, and engineers across US, India, and Southeast Asia time zones. Over these years I've moved from building features to owning complex areas and, most recently, leading a product rebuild.</p>
+        </div>
+      </div>
+
+      <div class="row exp-row">
+        <div>
+          <div class="exp-row__company">Escurity</div>
+          <div class="exp-row__dates">Mar 2016 — Dec 2019</div>
+        </div>
+        <div>
+          <div class="exp-row__place">Batam, Indonesia, .NET Developer</div>
+          <p class="exp-row__note">Where I started my professional career. I joined as a junior developer and grew into a mid level engineer, building and maintaining business applications with ASP.NET, C#, and SQL Server, including stored procedures and reporting. This is where I learned how to ship and support real software.</p>
+        </div>
+      </div>
+
+      <div class="row exp-row edu">
+        <div class="exp-row__company">Education</div>
+        <div>
+          <p>Universitas Internasional Batam, B.Sc. Computer Science, 2020.</p>
+          <p>UTeM University, Malaysia, ICT student exchange, 2015.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <div class="eyebrow section-head">05 / SKILLS</div>
+
+      <div class="skill-row">
+        <div class="skill-row__cat">Backend &amp; APIs</div>
+        <div class="skill-row__items">C#, ASP.NET Core, NestJS, Web API, REST, GraphQL, ADO.NET</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row__cat">Frontend</div>
+        <div class="skill-row__items">React, Next.js, TypeScript, JavaScript, Pixi.js, WebGL, Tailwind, jQuery</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row__cat">State &amp; Data</div>
+        <div class="skill-row__items">Zustand, React Hook Form, Zod, TanStack Query, Material React Table, Axios</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row__cat">Browser Extensions</div>
+        <div class="skill-row__items">Chrome, Firefox, Edge, background service workers, diagnostics, session replay</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row__cat">Databases</div>
+        <div class="skill-row__items">MS SQL Server, PostgreSQL, Firestore, Cloud SQL, Redis, Bull, Stored Procedures</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row__cat">Cloud &amp; DevOps</div>
+        <div class="skill-row__items">GCP (App Engine, Cloud Storage, Cloud SQL, Secret Manager, Log Explorer), Jenkins, CI/CD, Azure DevOps</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row__cat">Version Control &amp; Workflow</div>
+        <div class="skill-row__items">Git, GitHub, Bitbucket, branching and release management, Scrum, code review</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row__cat">Integrations &amp; Tools</div>
+        <div class="skill-row__items">OAuth, JWT, Linear, Jira, SendGrid, Pub/Sub, MCP, DevCycle, Elasticsearch, Kibana</div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="eyebrow contact__head">06 / CONTACT</div>
+      <h2 class="contact__title">Open to remote, onsite, or relocation.</h2>
+      <p class="contact__body">I work best as a full stack developer, but I'm happy to focus on backend or frontend if that's the better fit, and I'm ready to step into whatever role fits, lead or otherwise.</p>
+      <div class="contact__links">
+        <a href="mailto:christantoenry@gmail.com">christantoenry@gmail.com</a>
+        <a href="https://linkedin.com/in/enry-christanto">linkedin.com/in/enry-christanto</a>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
