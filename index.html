@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Enry Christanto — Senior Full Stack Developer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%23a2401b'/%3E%3Ctext%20x='16'%20y='23'%20font-family='Georgia,serif'%20font-size='22'%20font-weight='500'%20text-anchor='middle'%20fill='%23fbfaf7'%3EE%3C/text%3E%3C/svg%3E">
   <meta name="description" content="Enry Christanto — Senior Full Stack Developer based in Batam, Indonesia. C# / .NET on the backend, React and Next.js on the frontend. 9+ years building reliable, business-critical software.">
 
   <meta property="og:type" content="website">
@@ -23,6 +24,7 @@
       --muted: #8a8578;
       --accent: #a2401b;
       --border: #ddd9d0;
+      --chip-bg: #f0eee7;
       --serif: 'Newsreader', serif;
       --sans: 'IBM Plex Sans', sans-serif;
       --mono: 'JetBrains Mono', monospace;
@@ -122,11 +124,11 @@
     /* About */
     .about__body { max-width: 760px; }
     .about__body p {
-      font-size: 20px;
+      font-size: 17px;
       line-height: 1.65;
-      color: var(--text);
+      color: var(--body);
       margin: 0 0 24px 0;
-      font-family: var(--serif);
+      font-family: var(--sans);
     }
     .about__body p:last-child { margin-bottom: 0; }
 
@@ -169,9 +171,19 @@
       margin-bottom: 16px;
     }
     .work-row__stack {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.7;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .stack-chip {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text);
+      background: var(--chip-bg);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 3px 8px;
     }
     .work-row__desc {
       font-size: 16px;
@@ -186,6 +198,11 @@
       color: var(--body);
       font-size: 15px;
       line-height: 1.8;
+    }
+    .work-row__desc strong,
+    .work-row__bullets strong {
+      color: var(--text);
+      font-weight: 600;
     }
     .exp-row__dates {
       font-size: 13px;
@@ -255,7 +272,17 @@
     }
     .contact__links a {
       color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .contact__links a span {
       border-bottom: 1px solid var(--text);
+    }
+    .contact__links svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
     }
 
     /* Responsive */
@@ -277,7 +304,8 @@
       .nav { flex-direction: column; align-items: flex-start; gap: 16px; }
       .hero__title { font-size: 40px; }
       .contact__title { font-size: 34px; }
-      .hero__cta .btn { flex: 1; text-align: center; }
+      .hero__cta { flex-direction: column; }
+      .hero__cta .btn { text-align: center; }
     }
   </style>
 </head>
@@ -335,16 +363,30 @@
         <div>
           <div class="work-row__name">JotGo</div>
           <div class="work-row__role">Lead Engineer · Nov 2025 — Present</div>
-          <div class="work-row__stack">React, TypeScript, NestJS, Pixi.js, WebGL, Firestore, Redis, Bull, GCP, GraphQL, OAuth, SendGrid, MCP</div>
+          <div class="work-row__stack">
+            <span class="stack-chip">React</span>
+            <span class="stack-chip">TypeScript</span>
+            <span class="stack-chip">NestJS</span>
+            <span class="stack-chip">Pixi.js</span>
+            <span class="stack-chip">WebGL</span>
+            <span class="stack-chip">Firestore</span>
+            <span class="stack-chip">Redis</span>
+            <span class="stack-chip">Bull</span>
+            <span class="stack-chip">GCP</span>
+            <span class="stack-chip">GraphQL</span>
+            <span class="stack-chip">OAuth</span>
+            <span class="stack-chip">SendGrid</span>
+            <span class="stack-chip">MCP</span>
+          </div>
         </div>
         <div>
           <p class="work-row__desc">JotGo is a SaaS platform and browser extension for bug reporting and product feedback, with screenshot capture, session replay, and team collaboration. I lead the rebuild as the main engineer and own the whole system: the database, the backend, the frontend, the browser extension, and the release process, along with the direction of a small three person team. I inherited a rough codebase, so a large part of the job has been restructuring it into something maintainable while still shipping new features.</p>
           <ul class="work-row__bullets">
-            <li>Rebuilt the feedback canvas from ReactFlow to Pixi.js and WebGL. It handles hundreds of images smoothly in production, and I stress tested it past a thousand to confirm there was headroom.</li>
+            <li>Rebuilt the feedback canvas from <strong>ReactFlow</strong> to <strong>Pixi.js</strong> and <strong>WebGL</strong>. It handles hundreds of images smoothly in production, and I stress tested it past a thousand to confirm there was headroom.</li>
             <li>Built the browser extension diagnostics in the background service worker: network request capture, console log capture, and session replay, so developers get real context to reproduce an issue.</li>
-            <li>Built the backend on NestJS and Firestore, with GraphQL APIs, OAuth authentication, and Redis and Bull queues for background jobs and email notifications through SendGrid, all running on GCP.</li>
-            <li>Integrated Linear end to end over GraphQL and extended an inherited Jira integration, connecting user feedback to the teams that act on it.</li>
-            <li>Built an MCP integration that connects the platform's feedback data with AI tooling, supporting both OAuth and PAT authentication.</li>
+            <li>Built the backend on <strong>NestJS</strong> and <strong>Firestore</strong>, with <strong>GraphQL</strong> APIs, <strong>OAuth</strong> authentication, and <strong>Redis</strong> and <strong>Bull</strong> queues for background jobs and email notifications through <strong>SendGrid</strong>, all running on <strong>GCP</strong>.</li>
+            <li>Integrated <strong>Linear</strong> end to end over <strong>GraphQL</strong> and extended an inherited <strong>Jira</strong> integration, connecting user feedback to the teams that act on it.</li>
+            <li>Built an <strong>MCP</strong> integration that connects the platform's feedback data with AI tooling, supporting both <strong>OAuth</strong> and <strong>PAT</strong> authentication.</li>
             <li>Own the git branching strategy and the release process for the team.</li>
           </ul>
         </div>
@@ -354,15 +396,27 @@
         <div>
           <div class="work-row__name">Cadent Ad Manager Platform</div>
           <div class="work-row__role">Frontend Engineer · Jul 2024 — Nov 2025</div>
-          <div class="work-row__stack">React, Next.js, TypeScript, Tailwind, Zustand, React Hook Form, Zod, TanStack Query, Material React Table, Axios, DevCycle</div>
+          <div class="work-row__stack">
+            <span class="stack-chip">React</span>
+            <span class="stack-chip">Next.js</span>
+            <span class="stack-chip">TypeScript</span>
+            <span class="stack-chip">Tailwind</span>
+            <span class="stack-chip">Zustand</span>
+            <span class="stack-chip">React Hook Form</span>
+            <span class="stack-chip">Zod</span>
+            <span class="stack-chip">TanStack Query</span>
+            <span class="stack-chip">Material React Table</span>
+            <span class="stack-chip">Axios</span>
+            <span class="stack-chip">DevCycle</span>
+          </div>
         </div>
         <div>
-          <p class="work-row__desc">Cadent's platform is an enterprise DSP for programmatic advertising, covering campaigns, line items, ad groups, targeting, optimization, and audiences. It's a large, data heavy application, the kind with big server paginated tables and deeply nested, interdependent forms. I worked mostly on the ad group side, and I spent most of my time in the optimization area, which is the most complex part of the product. This is also where my professional React experience started. When a trader sets up an ad group, they pick an optimizer, predictive models, KPIs, and a bidding strategy, and all of those choices constrain each other, so changing one value changes what is valid everywhere else. I was the primary developer on that flow. I wrote most of the optimization form, around 78 percent of a component that had grown past 1,600 lines, and I owned the shared state that ties its steps together. Much of the real work was untangling edit mode and replacing fragile patterns so invalid combinations cannot be saved.</p>
+          <p class="work-row__desc">Cadent's platform is an enterprise DSP for programmatic advertising, covering campaigns, line items, ad groups, targeting, optimization, and audiences. It's a large, data heavy application, the kind with big server paginated tables and deeply nested, interdependent forms. I worked mostly on the ad group side, and I spent most of my time in the optimization area, which is the most complex part of the product. This is also where my professional <strong>React</strong> experience started. When a trader sets up an ad group, they pick an optimizer, predictive models, KPIs, and a bidding strategy, and all of those choices constrain each other, so changing one value changes what is valid everywhere else. I was the primary developer on that flow. I wrote most of the optimization form, around 78 percent of a component that had grown past 1,600 lines, and I owned the shared state that ties its steps together. Much of the real work was untangling edit mode and replacing fragile patterns so invalid combinations cannot be saved.</p>
           <ul class="work-row__bullets">
-            <li>Owned the ad group optimization flow (optimizer, predictive models, KPIs, bidding), built with React Hook Form and Zod for the interdependent validation and TanStack Query for the many dependent lookups.</li>
-            <li>Built the predictive KPI card and the HCP and health audience selection and save flow end to end, using Material React Table for the data grids.</li>
-            <li>Built the Next.js API routes, a BFF layer between the React app and the .NET backend, that handle auth, route to the right service, and reshape the data.</li>
-            <li>Managed shared state across the app with Zustand, and shipped changes behind DevCycle feature flags for gradual, controlled rollout.</li>
+            <li>Owned the ad group optimization flow (optimizer, predictive models, KPIs, bidding), built with <strong>React Hook Form</strong> and <strong>Zod</strong> for the interdependent validation and <strong>TanStack Query</strong> for the many dependent lookups.</li>
+            <li>Built the predictive KPI card and the HCP and health audience selection and save flow end to end, using <strong>Material React Table</strong> for the data grids.</li>
+            <li>Built the <strong>Next.js</strong> API routes, a BFF layer between the <strong>React</strong> app and the .NET backend, that handle auth, route to the right service, and reshape the data.</li>
+            <li>Managed shared state across the app with <strong>Zustand</strong>, and shipped changes behind <strong>DevCycle</strong> feature flags for gradual, controlled rollout.</li>
           </ul>
         </div>
       </article>
@@ -371,10 +425,21 @@
         <div>
           <div class="work-row__name">AdTheorent DSP Application</div>
           <div class="work-row__role">Full Stack Developer · Feb 2021 — Jul 2024</div>
-          <div class="work-row__stack">ASP.NET, .NET Core, C#, Web API, SQL Server, ADO.NET, JavaScript, jQuery, Bootstrap, Stored Procedures</div>
+          <div class="work-row__stack">
+            <span class="stack-chip">ASP.NET</span>
+            <span class="stack-chip">.NET Core</span>
+            <span class="stack-chip">C#</span>
+            <span class="stack-chip">Web API</span>
+            <span class="stack-chip">SQL Server</span>
+            <span class="stack-chip">ADO.NET</span>
+            <span class="stack-chip">JavaScript</span>
+            <span class="stack-chip">jQuery</span>
+            <span class="stack-chip">Bootstrap</span>
+            <span class="stack-chip">Stored Procedures</span>
+          </div>
         </div>
         <div>
-          <p class="work-row__desc">AdTheorent's DSP was an earlier AdTech campaign management platform, with campaign setup, line items, targeting, reporting, optimization, advertisers, and audiences. I worked full stack here for about three and a half years. On the backend I built Web API endpoints and controller actions in C# and .NET, and wrote a lot of SQL and stored procedures with ADO.NET for the data heavy workflows. On the frontend I worked in JavaScript and jQuery. I also spent real time refactoring fragile areas and tracking down production defects across the API, auth, and data. This is the backend heavy foundation of my experience.</p>
+          <p class="work-row__desc">AdTheorent's DSP was an earlier AdTech campaign management platform, with campaign setup, line items, targeting, reporting, optimization, advertisers, and audiences. I worked full stack here for about three and a half years. On the backend I built <strong>Web API</strong> endpoints and controller actions in <strong>C#</strong> and .NET, and wrote a lot of SQL and stored procedures with <strong>ADO.NET</strong> for the data heavy workflows. On the frontend I worked in <strong>JavaScript</strong> and <strong>jQuery</strong>. I also spent real time refactoring fragile areas and tracking down production defects across the API, auth, and data. This is the backend heavy foundation of my experience.</p>
         </div>
       </article>
     </section>
@@ -458,8 +523,19 @@
       <h2 class="contact__title">Open to remote, onsite, or relocation.</h2>
       <p class="contact__body">I work best as a full stack developer, but I'm happy to focus on backend or frontend if that's the better fit, and I'm ready to step into whatever role fits, lead or otherwise.</p>
       <div class="contact__links">
-        <a href="mailto:christantoenry@gmail.com">christantoenry@gmail.com</a>
-        <a href="https://linkedin.com/in/enry-christanto">linkedin.com/in/enry-christanto</a>
+        <a href="mailto:christantoenry@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="M3.5 7l8.5 6 8.5-6"></path>
+          </svg>
+          <span>christantoenry@gmail.com</span>
+        </a>
+        <a href="https://linkedin.com/in/enry-christanto">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+          </svg>
+          <span>linkedin.com/in/enry-christanto</span>
+        </a>
       </div>
     </section>
 
